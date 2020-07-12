@@ -31,7 +31,7 @@ Window {
 
         delegate: Rectangle {
             Text {
-                text: display // This is set in C++
+                text: display // This is set in mysqlmodel.cpp roleNames()
                 anchors.fill: parent
                 anchors.margins: 10
                 color: 'black'
