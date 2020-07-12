@@ -8,14 +8,16 @@ Window {
     height: 480
     title: qsTr("QSqlQueryModel - TableView")
 
+//    Component.onCompleted: {
+//        MysqlModel.callSql("SELECT * FROM users")
+//    }
+
     TableView {
         id: tableView
 
         columnWidthProvider: function (column) { return 100; }
         rowHeightProvider: function (column) { return 60; }
         anchors.fill: parent
-        leftMargin: rowsHeader.implicitWidth
-        topMargin: columnsHeader.implicitHeight
 
         ScrollBar.horizontal: ScrollBar{}
         ScrollBar.vertical: ScrollBar{}

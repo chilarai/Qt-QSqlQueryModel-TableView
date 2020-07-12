@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QDebug>
 
 #include "mysqlmodel.h"
 
@@ -11,7 +12,24 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
 
+    if(QSqlDatabase::isDriverAvailable("QMYSQL")){
+
+        QSqlDatabase dbMysql = QSqlDatabase::addDatabase("QMYSQL");
+        dbMysql.setHostName("SERVER");
+        dbMysql.setPort(3306);
+        dbMysql.setDatabaseName("DATABASE");
+        dbMysql.setUserName("DB_USER");
+        dbMysql.setPassword("DB_PASSWORD");
+
+
+        if(!dbMysql.open()){
+            qDebug() << "Connection to mysql failed";
+
+        }
+    }
+
     MysqlModel mysqlModel;
+    mysqlModel.callSql("SELECT * FROM users");
 
     QQmlApplicationEngine engine;
 
