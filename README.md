@@ -6,13 +6,13 @@ This is a sample project to connect TableView in Qml to QSqlQueryModel.
 
 -   In the `.pro` file, add
 
-```
+```sh
 Qt += sql
 ```
 
--   Change the credentials in `main.cpp`
+-   **main.cpp**: Change the credentials in `main.cpp`
 
-```
+```sh
 dbMysql.setHostName("SERVER");
 dbMysql.setPort(3306);
 dbMysql.setDatabaseName("DATABASE");
@@ -20,17 +20,17 @@ dbMysql.setUserName("DB_USER");
 dbMysql.setPassword("DB_PASSWORD");
 ```
 
--   Replace in `mysqlmodel.h`
+-   **mysqlmodel.h**
 
 In Reference 1 (See References below), the code provided assumes that the select query fields will be finite. However, if we want dynamic queries where we do not know the field names then we have to do the following
 
-```
+```sh
 QHash<int, QByteArray> roleNames() const {return m_roleNames;}
 ```
 
 with
 
-```
+```sh
 QHash<int, QByteArray> roleNames() const {return {{Qt::DisplayRole, "display"}};}
 ```
 
