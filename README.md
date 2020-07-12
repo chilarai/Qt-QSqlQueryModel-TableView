@@ -9,13 +9,13 @@ In Reference 1 (See References below), the code provided assumes that the select
 Replace in **mysqlmodel.h**
 
 ```
-QHash<int, QByteArray> roleNames() const {	return m_roleNames;	}
+QHash<int, QByteArray> roleNames() const {return m_roleNames;}
 ```
 
 with
 
 ```
-QHash<int, QByteArray> roleNames() const {	return {{Qt::DisplayRole, "display"}};	}
+QHash<int, QByteArray> roleNames() const {return {{Qt::DisplayRole, "display"}};	}
 ```
 
 The above code can be Refactored and moved to `.cpp` file
