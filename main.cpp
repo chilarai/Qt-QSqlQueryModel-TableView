@@ -19,11 +19,11 @@ int main(int argc, char *argv[])
     if(QSqlDatabase::isDriverAvailable("QMYSQL")){
 
         QSqlDatabase dbMysql = QSqlDatabase::addDatabase("QMYSQL");
-        dbMysql.setHostName("SERVER");
+        dbMysql.setHostName("localhost");
         dbMysql.setPort(3306);
-        dbMysql.setDatabaseName("DATABASE");
-        dbMysql.setUserName("DB_USER");
-        dbMysql.setPassword("DB_PASSWORD");
+        dbMysql.setDatabaseName("grafieks_my");
+        dbMysql.setUserName("root");
+        dbMysql.setPassword("123@312QQl");
 
 
         if(!dbMysql.open()){
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     // And run a default query
 
     MysqlModel mysqlModel;
-    mysqlModel.callSql("SELECT * FROM users");
+    mysqlModel.callSql("SELECT * FROM profiles");
 
     // Set the model for QML
 
