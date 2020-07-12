@@ -8,9 +8,11 @@ Window {
     height: 480
     title: qsTr("QSqlQueryModel - TableView")
 
-//    Component.onCompleted: {
-//        MysqlModel.callSql("SELECT * FROM users")
-//    }
+    // Uncomment this, if you want to call query from qml
+
+    //    Component.onCompleted: {
+    //        MysqlModel.callSql("SELECT * FROM users")
+    //    }
 
     TableView {
         id: tableView
@@ -25,9 +27,11 @@ Window {
 
         model: MysqlModel
 
+        // Table Body
+
         delegate: Rectangle {
             Text {
-                text: display
+                text: display // This is set in C++
                 anchors.fill: parent
                 anchors.margins: 10
                 color: 'black'
@@ -36,6 +40,8 @@ Window {
             }
         }
 
+
+        // Table Header
 
         Row {
             id: columnsHeader

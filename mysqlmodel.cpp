@@ -36,6 +36,9 @@ QHash<int, QByteArray> MysqlModel::roleNames() const
 {
     QVariant value;
 
+    // Important that you set this
+    // Else display will not work in QML
+
     return {{Qt::DisplayRole, "display"}};
 }
 

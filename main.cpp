@@ -10,7 +10,11 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
+    QQmlApplicationEngine engine;
 
+
+    // Mysql connection
+    // Change the credentials accrodingly
 
     if(QSqlDatabase::isDriverAvailable("QMYSQL")){
 
@@ -28,10 +32,13 @@ int main(int argc, char *argv[])
         }
     }
 
+    // Initiate mysql instance
+    // And run a default query
+
     MysqlModel mysqlModel;
     mysqlModel.callSql("SELECT * FROM users");
 
-    QQmlApplicationEngine engine;
+    // Set the model for QML
 
     engine.rootContext()->setContextProperty("MysqlModel", &mysqlModel);
 
