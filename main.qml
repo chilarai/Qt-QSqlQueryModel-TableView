@@ -9,6 +9,8 @@ Window {
     title: qsTr("QSqlQueryModel - TableView")
 
     // Uncomment this, if you want to call query from qml
+    // If you uncomment this, remember to comment out the followin line in main.cpp
+    // mysqlModel.callSql("SELECT * FROM users");
 
     //    Component.onCompleted: {
     //        MysqlModel.callSql("SELECT * FROM users")
