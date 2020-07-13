@@ -34,8 +34,6 @@ QVariant MysqlModel::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> MysqlModel::roleNames() const
 {
-    QVariant value;
-
     // Important that you set this
     // Else display will not work in QML
 
